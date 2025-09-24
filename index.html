@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador Léxico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Logo masculino simple, puedes poner otro si gustas -->
+            <svg class="masculine-logo" viewBox="0 0 120 120" width="80" height="80">
+                <circle cx="60" cy="60" r="54" fill="#b3c1e1" stroke="#7da0c5" stroke-width="8"/>
+                <rect x="48" y="25" width="24" height="50" rx="12" fill="#7da0c5" />
+                <polygon points="60,90 45,75 75,75" fill="#7da0c5" />
+                <circle cx="60" cy="50" r="8" fill="#fff"/>
+            </svg>
+            <h1>Verificador Léxico</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <label for="inputCorreo">1. Correo institucional (<code>curnvirtual.edu.co</code> o <code>curn.edu.co</code>):</label><br>
+        <input type="text" id="inputCorreo" placeholder="usuario@curnvirtual.edu.co">
+        <button onclick="verificarCorreo()">Verificar</button>
+        <span id="resultCorreo" class="result"></span>
+        <div class="info">
+            <ul>
+                <li><b>curnvirtual.edu.co:</b> usuario inicia con minúsculas y termina en 1 o 2 dígitos.<br>
+                    Ej: <code>nombre23@curnvirtual.edu.co</code>
+                </li>
+                <li><b>curn.edu.co:</b> usuario inicia con vocal, seguido de letras, debe tener punto (.) o guión bajo (_).<br>
+                    Ej: <code>a.maria@curn.edu.co</code>, <code>e_jose@curn.edu.co</code>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <label for="inputHex">2. Número hexadecimal (#RGB o #RRGGBB):</label><br>
+        <input type="text" id="inputHex" placeholder="#1A2">
+        <button onclick="verificarHex()">Verificar</button>
+        <span id="resultHex" class="result"></span>
+        <div class="info">
+            Ej: <code>#ABC</code>, <code>#00FF99</code>
+        </div>
+    </div>
+
+    <div class="container">
+        <label for="inputDecimal">3. Número decimal entre 0,0 y 5,0 (formato coma):</label><br>
+        <input type="text" id="inputDecimal" placeholder="2,5">
+        <button onclick="verificarDecimal()">Verificar</button>
+        <span id="resultDecimal" class="result"></span>
+        <div class="info">
+            Ej: <code>0,0</code>, <code>3,7</code>, <code>5,0</code>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Footer vacío, solo para espacio visual -->
+        <div class="footer-masculine"></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
